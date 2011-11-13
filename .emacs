@@ -63,4 +63,90 @@
 ;;; バックアップファイルを作成しない
 (setq backup-inhibited t)
 
+(add-to-list 'load-path "~/.emacs.d/auto-install")
 
+(require 'auto-install)
+
+;;; 起動時にEmacsWikiのページ名を補完候補に加える
+(auto-install-update-emacswiki-package-name t)
+
+;;; install-elisp.el互換モードにする
+(auto-install-compatibility-setup)
+
+;;; ediff関連のバッファを1つのフレームにまとめる
+;(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;;; redo+
+(require 'redo+)
+(global-set-key (kbd "C-M-_") 'redo)
+;; 過去のアンドゥをリドゥされないようにする
+(setq undo-no-redo t)
+;; 大量のアンドゥに耐えられるようにする
+(setq undo-limit 600000)
+(setq undo-strong-limit 900000)
+
+;; yasnippet
+(add-to-list 'load-path "~/.emacs.d/plugin/yasnippet-0.6.1c")
+(require 'yasnippet-config)
+;(yas/setup "~/.emacs.d/plugin/yasnippet-0.6.1c")
+
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/plugin/yasnippet-0.6.1c/snippets")
+
+(require 'anything)
+
+(define-key global-map (kbd "C-:") 'anything)
+(define-key global-map (kbd "C-;") 'anything-resume)
+(define-key global-map (kbd "C-x b") 'anything-for-files)
+
+(define-key anything-map (kbd "C-@") 'anything-toggle-visible-mark)
+
+(require 'descbinds-anything)
+(descbinds-anything-install)
+
+(require 'anything-complete)
+(anything-lisp-complete-symbol-set-timer 150)
+
+(define-key emacs-lisp-mode-map (kbd "C-M-i") 'anything-lisp-complete-symbol-partial-match)
+(define-key lisp-interaction-mode-map (kbd "C-M-i") 'anything-lisp-complete-symbol-partial-match)
+
+(require 'anything-grep)
+(require 'anything-config)
+
+;; C-kで行全体を削除
+;(setq kill-whole-line t)
+
+(require 'shell-pop)
+(shell-pop-set-internal-mode "ansi-term")
+(shell-pop-set-internal-mode-shell "/bin/bash")
+(global-set-key [f8] 'shell-pop)
+
+;; Besides, you can set the window height, the number for the percentage
+;; for selected window.
+(shell-pop-set-window-height 60)
+
+(require 'auto-complete-config)
+(global-auto-complete-mode 1)
+
+; Shit+矢印でウィンドウを移動できるようにする
+(windmove-default-keybindings)
+
+; 移動先にウィンドウがない場合は、反対側へ移動する
+(setq windmove-wrap-around t)
+
+; MacでCommand+C、Vのコピー&ペーストができるように
+(mac-key-mode 1)
+
+(define-key global-map (kbd "C-S-<up>") 'windmove-up)
+(define-key global-map (kbd "C-S-<down>") 'windmove-down)
+(define-key global-map (kbd "C-S-<left>") 'windmove-left)
+(define-key global-map (kbd "C-S-<right>") 'windmove-right)
+
+;(blink-cursor-mode t)
+
+(setq default-input-method "MacOSX")
+;(mac-add-key-passed-to-system 'shift)
+
+;(setq ns-command-modifier (quote meta))
+;(setq ns-alternate-modifier (quote super))
