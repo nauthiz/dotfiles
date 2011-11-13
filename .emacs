@@ -136,7 +136,7 @@
 (setq windmove-wrap-around t)
 
 ; MacでCommand+C、Vのコピー&ペーストができるように
-(mac-key-mode 1)
+;(mac-key-mode 1)
 
 (define-key global-map (kbd "C-S-<up>") 'windmove-up)
 (define-key global-map (kbd "C-S-<down>") 'windmove-down)
