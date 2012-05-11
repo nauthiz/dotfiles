@@ -448,3 +448,13 @@ function! s:unite_my_settings()"{{{
 endfunction"}}}
 
 let g:unite_source_file_mru_limit = 200
+
+" Vundle.vim
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc'
+Bundle 'thinca/vim-ref'
+Bundle 'thinca/vim-quickrun'
+
