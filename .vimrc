@@ -86,7 +86,7 @@ set fileencodings=iso-2002-jp,utf-8,euc-jp,cp932
 "	unlet s:enc_jis
 "endif
 
-:set fileformats=dos,unix,mac 
+:set fileformats=unix,dos,mac 
 
 "map <F2> <ESC>:bp<CR>
 "map <F3> <ESC>:bn<CR>
