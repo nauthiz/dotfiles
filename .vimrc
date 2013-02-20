@@ -473,6 +473,7 @@ call vundle#rc()
 
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
+Bundle 'Shougo/vimfiler'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 
