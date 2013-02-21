@@ -486,6 +486,8 @@ Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimfiler'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'desert256.vim'
 
 " オリジナルは 'h1mesuke/unite-outline' だけど vital#of('unite') でエラーが発生するのでフォーク版を使用
 Bundle 'Shougo/unite-outline'
