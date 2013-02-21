@@ -475,6 +475,8 @@ noremap <C-U><C-J> :Unite jump<CR>
 noremap <C-U><C-L> :Unite line<CR>
 " ブックマーク
 noremap <C-U><C-K> :Unite bookmark<CR>
+" アウトライン
+noremap <C-U><C-O> :Unite -vertical -winwidth=30 -no-quit outline<CR>
 " 全部
 noremap <C-U><C-A> :Unite UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 " ESCキーを2回押すと終了する
