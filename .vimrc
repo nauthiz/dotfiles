@@ -206,7 +206,7 @@ map <F3> <ESC>:tabnext<CR>
 
 " QuickFix関連
 map <F4> <ESC>:cprevious<CR>
-map <F5> <ESC>:cnext<CR>A
+map <F5> <ESC>:cnext<CR>
 
 " アクティブタブ
 "hi TabLineSel ctermbg=black ctermfg=white
