@@ -455,12 +455,22 @@ let g:unite_enable_start_insert=1
 noremap <C-U><C-B> :Unite buffer<CR>
 " ファイル一覧
 noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR>
+" ファイル一覧 (再帰)
+noremap <C-U><C-R> :Unite file_rec<CR>
 " 最近使ったファイルの一覧
-noremap <C-U><C-R> :Unite file_mru<CR>
+noremap <C-U><C-M> :Unite file_mru<CR>
 " レジスタ一覧
 noremap <C-U><C-Y> :Unite -buffer-name=register register<CR>
 " ファイルとバッファ
 noremap <C-U><C-U> :Unite buffer file_mru<CR>
+" Grep
+noremap <C-U><C-G> :Unite grep<CR>
+" ジャンプ
+noremap <C-U><C-J> :Unite jump<CR>
+" 行
+noremap <C-U><C-L> :Unite line<CR>
+" ブックマーク
+noremap <C-U><C-K> :Unite bookmark<CR>
 " 全部
 noremap <C-U><C-A> :Unite UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 " ESCキーを2回押すと終了する
@@ -476,4 +486,7 @@ Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimfiler'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
+
+" オリジナルは 'h1mesuke/unite-outline' だけど vital#of('unite') でエラーが発生するのでフォーク版を使用
+Bundle 'Shougo/unite-outline'
 
