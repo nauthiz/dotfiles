@@ -204,6 +204,10 @@ autocmd FileType scheme set nosmartindent nocindent lispwords+=define-class,defi
 map <F2> <ESC>:tabprev<CR>
 map <F3> <ESC>:tabnext<CR>
 
+" QuickFix関連
+map <F4> <ESC>:cprevious<CR>
+map <F5> <ESC>:cnext<CR>A
+
 " アクティブタブ
 "hi TabLineSel ctermbg=black ctermfg=white
 hi TabLineSel ctermbg=blue ctermfg=white
